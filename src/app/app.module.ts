@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/ui-kit/header/header.component';
-import { SitesComponent } from './pages/sites/sites.component';
+import { SitesComponent } from './modules/sites/sites.component';
 import {RouterLink, RouterLinkActive, RouterModule, Routes} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
-import { CardComponent } from './components/card/card.component';
+import { DomainCardComponent } from './modules/sites/domains/domain-card/domain-card.component';
 
 const appRoutes: Routes = [
   { path: 'sites', component: SitesComponent},
@@ -17,7 +17,7 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     SitesComponent,
-    CardComponent
+    DomainCardComponent
   ],
   imports: [
     BrowserModule,
