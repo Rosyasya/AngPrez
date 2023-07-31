@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --secondary-grey-10: #F1F2F4;
+  --secondary-grey-20: #E6E6ED;
+  --secondary-grey-50: #8E93A8;
+  --secondary-grey-70: #2B334A;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Ubuntu, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

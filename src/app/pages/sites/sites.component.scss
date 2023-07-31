@@ -1,0 +1,31 @@
+.sites {
+  width: 100%;
+  overflow: hidden;
+
+  &__container {
+    width: 95%;
+    height: calc(100vh - 172px);
+    border-radius: 16px;
+    background: var(--secondary-grey-10);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -48%);
+    z-index: 999;
+
+    h2 {
+      margin: 20px 24px;
+    }
+   }
+
+  &__grid {
+    height: calc(100vh - 240px);
+    padding: 24px;
+    margin-bottom: 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 180px);
+    grid-gap: 16px;
+    overflow-y: scroll;
+  }
+}
