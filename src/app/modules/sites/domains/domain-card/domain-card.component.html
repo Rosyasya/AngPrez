@@ -1,20 +1,20 @@
 <div class="card">
   <div class="card__header">
-    <h3>Site name</h3>
+    <h3>{{title}}</h3>
     <button><img src="../../../../../assets/images/options.png" alt="options"></button>
   </div>
   <div class="card__options">
     <div class="card__img">
-      <img src="../../../../../assets/images/noneIcon.png" alt="img">
+      <img [src]="img" [alt]="img">
     </div>
     <div class="card__info">
       <div class="card__info-container">
         <img src="../../../../../assets/images/globe.png" alt="global">
-        <h4>site.example.com</h4>
+        <a [href]="domain">{{domain}}</a>
       </div>
       <div class="card__info-container">
         <img src="../../../../../assets/images/theme.png" alt="theme">
-        <h4>name theme</h4>
+        <h4>{{theme}}</h4>
       </div>
     </div>
   </div>

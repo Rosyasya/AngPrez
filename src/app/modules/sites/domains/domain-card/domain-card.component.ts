@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-domain-card',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./domain-card.component.scss']
 })
 export class DomainCardComponent {
+  @Input() title: string;
+  @Input() img: string;
+  @Input() domain: string;
+  @Input() theme: string;
 
 }
