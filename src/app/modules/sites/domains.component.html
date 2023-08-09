@@ -3,7 +3,7 @@
     <h2>Sites</h2>
     <div class="sites__grid">
       <div class="sites__grid-card" *ngFor="let card of sites">
-        <app-domain-card [title]="card.title" [img]="card.img" [domain]="card.domain" [theme]="card.theme" ></app-domain-card>
+        <app-domain-card [title]="card.title" [img]="card.img" [domain]="card.domain" [theme]="card.theme" [id]="card.id" ></app-domain-card>
       </div>
     </div>
   </div>

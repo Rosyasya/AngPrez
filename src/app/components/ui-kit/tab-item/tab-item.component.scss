@@ -1,0 +1,22 @@
+.tab {
+  margin-right: 32px;
+  font-size: 14px;
+  &-link {
+    color: black;
+    font-weight: 500;
+    padding-bottom: 6px;
+    transition: none;
+
+    &:hover {
+      color: #6FB295;
+      padding-bottom: 4px;
+      border-bottom: 2px solid #6FB295;
+    }
+
+    &.active {
+      color: #6FB295;
+      padding-bottom: 4px;
+      border-bottom: 2px solid #6FB295;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.domain {
+  width: 100%;
+  overflow: hidden;
+
+  &__container {
+    width: 95%;
+    height: calc(100vh - 172px);
+    border-radius: 16px;
+    background: var(--secondary-grey-10);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -48%);
+    z-index: 999;
+
+    h2 {
+      margin: 20px 24px;
+    }
+  }
+}
