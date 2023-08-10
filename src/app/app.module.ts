@@ -8,22 +8,39 @@ import {RouterLink, RouterLinkActive, RouterModule, Routes} from "@angular/route
 import {HttpClientModule} from "@angular/common/http";
 import { DomainCardComponent } from './modules/sites/domains/domain-card/domain-card.component';
 import { DomainManagementComponent } from './modules/sites/domains/domain-management/domain-management.component';
-import { TabsComponent } from './components/ui-kit/tabs/tabs.component';
 import { TabItemComponent } from './components/ui-kit/tab-item/tab-item.component';
+import { GeneralComponent } from './modules/sites/domains/domain-management/general/general.component';
+import { InfrastructurePagesComponent } from './modules/sites/domains/domain-management/infrastructure-pages/infrastructure-pages.component';
 
 const appRoutes: Routes = [
   {
     path: 'domains',
-    component: DomainsComponent
+    component: DomainsComponent,
   },
   {
-    path: ':id',
+    path: 'domains/:id',
     component: DomainManagementComponent,
     children: [
       {
         path: '',
         redirectTo: 'general',
         pathMatch: 'full'
+      },
+      {
+        path: 'general',
+        component: GeneralComponent,
+      },
+      {
+        path: 'infrastructure pages',
+        component: InfrastructurePagesComponent,
+      },
+      {
+        path: 'plugins',
+        component: InfrastructurePagesComponent,
+      },
+      {
+        path: 'layouts',
+        component: InfrastructurePagesComponent,
       },
     ],
   }
@@ -36,8 +53,9 @@ const appRoutes: Routes = [
     DomainsComponent,
     DomainCardComponent,
     DomainManagementComponent,
-    TabsComponent,
-    TabItemComponent
+    TabItemComponent,
+    GeneralComponent,
+    InfrastructurePagesComponent
   ],
   imports: [
     BrowserModule,

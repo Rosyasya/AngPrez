@@ -1,4 +1,4 @@
-.sites {
+.domain {
   width: 100%;
   overflow: hidden;
 
@@ -6,7 +6,7 @@
     width: 95%;
     height: calc(100vh - 172px);
     border-radius: 16px;
-    background: var(--secondary-grey-10);
+    background: white;
     position: absolute;
     top: 50%;
     left: 50%;

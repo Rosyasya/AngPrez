@@ -1,8 +1,8 @@
-<div class="sites">
-  <div class="sites__container">
+<div class="domain">
+  <div class="domain__container">
     <h2>Sites</h2>
-    <div class="sites__grid">
-      <div class="sites__grid-card" *ngFor="let card of sites">
+    <div class="domain__grid">
+      <div class="domain__grid-card" *ngFor="let card of domains">
         <app-domain-card [title]="card.title" [img]="card.img" [domain]="card.domain" [theme]="card.theme" [id]="card.id" ></app-domain-card>
       </div>
     </div>

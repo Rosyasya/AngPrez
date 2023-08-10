@@ -1,0 +1,139 @@
+.general {
+  width: 500px;
+  margin: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  &__saved {
+    padding: 8px 12px;
+    margin-bottom: 24px;
+    background: var(--system-success-10);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
+
+    &-container {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      img {
+        height: 20px;
+      }
+    }
+
+
+    h3 {
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  form {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__files {
+    display: flex;
+    gap: 48px;
+
+    &-container {
+
+      h3 {
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 8px;
+      }
+
+      input[type='file'] {
+        display: none;
+      }
+
+      label {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        height: 120px;
+        box-shadow: 0px 0px 0px 2px #F1F2F4;
+        border: 1px solid var(--secondary-grey-20);
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+
+    label {
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    select {
+      padding-left: 10px;
+      width: 500px;
+      height: 48px;
+      color: grey;
+      font-size: 14px;
+      outline: none;
+      border-radius: 8px;
+      border: 1px solid var(--secondary-grey-20);
+
+      option {
+        color: black;
+      }
+    }
+
+    input {
+      width: 500px;
+      height: 48px;
+      padding-left: 10px;
+      outline: none;
+      border-radius: 8px;
+      border: 1px solid var(--secondary-grey-20);
+      font-size: 14px;
+    }
+  }
+}
+
+.logo {
+  width: 270px;
+}
+
+.icon {
+  width: 120px;
+}
+
+.circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--secondary-grey-10);
+}
+
+.save__button {
+  padding: 10px 23px;
+  background: var(--primary-50);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  align-self: end;
+}

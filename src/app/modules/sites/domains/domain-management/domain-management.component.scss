@@ -6,7 +6,7 @@
     width: 95%;
     height: calc(100vh - 172px);
     border-radius: 16px;
-    background: var(--secondary-grey-10);
+    background: white;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -15,6 +15,16 @@
 
     h2 {
       margin: 20px 24px;
+    }
+  }
+
+  &__tabs {
+    border-bottom: 2px solid var(--secondary-grey-10);
+    padding: 0px 0px 6px 24px;
+    display: flex;
+
+    &-list {
+      margin-bottom: -2px;
     }
   }
 }

@@ -3,6 +3,9 @@
   --secondary-grey-20: #E6E6ED;
   --secondary-grey-50: #8E93A8;
   --secondary-grey-70: #2B334A;
+  --primary-50: #6FB295;
+  --system-success-50: #287D3C;
+  --system-success-10: #EDF9F0;
 }
 
 * {
@@ -13,6 +16,8 @@
 
 body {
   font-family: Ubuntu, sans-serif;
+  height: 100vh;
+  background: var(--secondary-grey-10);
 }
 
 ul {

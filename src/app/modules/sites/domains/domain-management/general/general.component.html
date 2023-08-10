@@ -1,0 +1,50 @@
+<div class="general">
+  <div class="general__saved" *ngIf="isSaved">
+    <div class="general__saved-container">
+      <img src="../../../../../../assets/images/success.png" alt="success">
+      <h3>Changes saved</h3>
+    </div>
+    <button (click)="isSaved = false"><img src="../../../../../../assets/images/cross.png" alt="cross"></button>
+  </div>
+
+  <form action="">
+    <div class="general__files">
+      <div class="general__files-container">
+        <h3>Logo</h3>
+        <label class="logo">
+          <input type="file">
+          <span class="circle"></span>
+          Choose file
+        </label>
+      </div>
+      <div class="general__files-container">
+        <h3>Favorite icon</h3>
+        <label class="icon">
+          <input type="file">
+          <span class="circle"></span>
+          Choose file
+        </label>
+      </div>
+    </div>
+
+    <div class="general__text">
+      <label for="theme">Theme</label>
+      <select name="Theme" id="theme" >
+        <option class="selected__option" value="" disabled selected>Select theme</option>
+        <option value="test">test</option>
+      </select>
+    </div>
+
+    <div class="general__text">
+      <label for="branding">Branding <span style="color: var(--primary-50)">*</span></label>
+      <input type="text" placeholder="Enter branding" id="branding">
+    </div>
+
+    <div class="general__text">
+      <label for="domain">Domain</label>
+      <input type="text" placeholder="{domain}" id="domain" disabled>
+    </div>
+  </form>
+
+  <button type="submit" class="save__button" (click)="onSaveForm()">Save changes</button>
+</div>

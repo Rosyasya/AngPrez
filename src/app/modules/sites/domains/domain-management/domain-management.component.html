@@ -2,12 +2,11 @@
   <div class="domain__container">
     <h2>Domain Settings</h2>
 
-    <app-tabs>
-      <app-tab-item title="General"></app-tab-item>
-      <app-tab-item title="Infrastructure Pages"></app-tab-item>
-      <app-tab-item title="Plugins"></app-tab-item>
-      <app-tab-item title="Layouts"></app-tab-item>
-    </app-tabs>
+    <div class="domain__tabs">
+      <ul class="domain__tabs-list" *ngFor="let tab of tabs">
+        <app-tab-item (click)="switchTab(tab)" [active]="activeTab" [tab]="tab"></app-tab-item>
+      </ul>
+    </div>
 
     <router-outlet></router-outlet>
   </div>
