@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 
 @Component({
   selector: 'app-domain-management',
@@ -7,18 +7,21 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./domain-management.component.scss']
 })
 export class DomainManagementComponent implements OnInit{
-  constructor(private router: Router, private activatedRouter: ActivatedRoute) {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
   }
   tabs = DomainTabs.values();
   activeTab: DomainTabs;
-  id: string = this.activatedRouter.snapshot.url[1].path;
+  id: number;
   switchTab(tab: DomainTabs) {
     this.activeTab = tab;
     this.router.navigate(['domains', this.id, tab.name.toLowerCase()]);
   }
 
   ngOnInit(): void {
-    console.log(this.id);
+    this.activatedRoute.params
+      .subscribe((params: Params) => {
+        this.id = +params['id'];
+      })
   }
 }
 
