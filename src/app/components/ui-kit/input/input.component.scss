@@ -1,0 +1,26 @@
+.input__wrapper {
+}
+
+.input__label {
+
+}
+
+.input__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  img {
+    padding: 14px 10px;
+    position: absolute;
+  }
+
+  input {
+    width: 100%;
+    padding: 14px 10px;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid var(--secondary-grey-20);
+    font-size: 14px;
+  }
+}

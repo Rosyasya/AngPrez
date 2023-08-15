@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card__header">
+    <h3>{{card.title}}</h3>
+    <a [routerLink]="[card.id]"><img src="../../../../assets/images/options.png" alt="options"></a>
+  </div>
+  <div class="card__options">
+    <div class="card__img">
+      <img [src]="card.img" [alt]="card.img">
+    </div>
+    <div class="card__info">
+      <div class="card__info-container">
+        <img src="../../../../assets/images/globe.png" alt="global">
+        <a [href]="card.domain">{{card.domain}}</a>
+      </div>
+      <div class="card__info-container">
+        <img src="../../../../assets/images/theme.png" alt="theme">
+        <h4>{{card.theme}}</h4>
+      </div>
+    </div>
+  </div>
+</div>

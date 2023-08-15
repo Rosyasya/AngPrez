@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {IDomainTab} from "./idomain-tab";
+import {TabItem} from "./tab-item";
 
 @Component({
   selector: 'app-tab-item',
@@ -7,6 +7,6 @@ import {IDomainTab} from "./idomain-tab";
   styleUrls: ['./tab-item.component.scss']
 })
 export class TabItemComponent{
-  @Input() tab: IDomainTab;
-  @Input() active: IDomainTab;
+  @Input() tab: TabItem;
+  @Input() active: TabItem;
 }

@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {DomainCard} from "./domain-card";
 
 @Component({
   selector: 'app-domain-card',
@@ -7,12 +7,9 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./domain-card.component.scss']
 })
 export class DomainCardComponent{
-  constructor(private route: ActivatedRoute) {
+  constructor() {
   }
-  @Input() title: string;
-  @Input() img: string;
-  @Input() domain: string;
-  @Input() theme: string;
-  @Input() id: number;
+
+  @Input() card: DomainCard;
 
 }
