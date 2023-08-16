@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ImageFile} from "../../../../../components/ui-kit/image-upload/image-file";
 
 @Component({
   selector: 'app-general',
@@ -10,5 +11,11 @@ export class GeneralComponent {
 
   onSaveForm() {
     this.isSaved = true;
+  }
+
+  files: ImageFile[] = [];
+
+  onDropFiles(files: ImageFile[]): void {
+    this.files = [...this.files, ...files];
   }
 }

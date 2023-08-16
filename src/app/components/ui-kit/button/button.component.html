@@ -2,5 +2,5 @@
                                    'flex-direction': isReversed ? 'row-reverse' : ''}"
                                     (click)="callback" [disabled]="isDisabled">
   {{title}}
-  <img src="{{img}}" alt="{{img}}">
+  <img [src]="img" [alt]="img">
 </button>

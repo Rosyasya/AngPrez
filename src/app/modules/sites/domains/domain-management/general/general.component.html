@@ -46,4 +46,21 @@
   </form>
 
   <app-button title="Save Changes" [callback]="onSaveForm()"></app-button>
+
+
+
+
+<!--  Image Uploader-->
+
+  <div class="container">
+    <div class="row">
+      <div class="drop-box" corpImgUpload (dropFiles)="onDropFiles($event)">
+        <span class="message">Drop File Images Here</span>
+      </div>
+    </div>
+    <div class="row">
+      <img *ngFor="let file of files" [src]="file.url" />
+    </div>
+  </div>
+
 </div>

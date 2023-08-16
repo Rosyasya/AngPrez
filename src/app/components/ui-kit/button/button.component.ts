@@ -6,8 +6,8 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent {
-  @Input() title?: string = '';
-  @Input() img?: string = '';
+  @Input() title?: string;
+  @Input() img?: string;
   @Input() size: string = '14px';
   @Input() callback: any;
   @Input() isReversed: boolean = false;
