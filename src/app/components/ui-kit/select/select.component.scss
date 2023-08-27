@@ -1,0 +1,84 @@
+.select {
+  position: relative;
+
+  &__label {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 10px;
+    width: 500px;
+    height: 48px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid var(--secondary-grey-20);
+
+    &-value {
+      font-size: 14px;
+      font-weight: 400;
+      position: absolute;
+    }
+
+    &-placeholder {
+      font-size: 14px;
+      font-weight: 400;
+      color: #B2B5C5;
+    }
+  }
+}
+
+.options {
+  background: white;
+  width: 100%;
+  position: absolute;
+  top: 72px;
+  left: 0;
+  z-index: 999;
+
+  &__list {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    box-shadow: 0px 2px 12px 2px #8E93A826;
+
+  }
+
+  &__item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 14px 11px;
+    cursor: pointer;
+    height: 48px;
+    border-bottom: 1px solid #F1F2F4;
+
+    font-weight: 400;
+    font-size: 14px;
+    color: #171F33;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+      background: #F8F9FA;
+    }
+
+    &.selected {
+      background: #F8F9FA;
+    }
+  }
+}
+
+.input {
+  padding: 8px;
+}

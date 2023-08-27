@@ -7,7 +7,7 @@
     <button (click)="isSaved = false"><img src="../../../../../../assets/images/cross.png" alt="cross"></button>
   </div>
 
-  <form action="">
+  <form #form="ngForm" (ngSubmit)="onSaveForm(form)">
     <div class="general__files">
       <div class="general__files-container">
         <h3>Logo</h3>
@@ -28,39 +28,17 @@
     </div>
 
     <div class="general__text">
-      <label for="theme">Theme</label>
-      <select name="Theme" id="theme" >
-        <option class="selected__option" value="" disabled selected>Select theme</option>
-        <option value="test">test</option>
-      </select>
+      <app-select (valueChange)="handleTheme($event)" [label]="'Theme'" [placeholder]="'Select theme'" [showSearch]="true"></app-select>
     </div>
 
     <div class="general__text">
-      <app-input [width]="'500px'"></app-input>
+      <app-input (valueChange)="handleBranding($event)" [width]="'500px'" [label]="'Branding *'" [placeholder]="'Enter branding'"></app-input>
     </div>
 
     <div class="general__text">
-      <label for="domain">Domain</label>
-      <input type="text" placeholder="{domain}" id="domain" disabled>
+      <app-input (valueChange)="handleDomain($event)" [width]="'500px'" [label]="'Domain'" [placeholder]="domain" [isDisabled]="true"></app-input>
     </div>
+    <app-button title="Save Changes" [type]="'submit'"></app-button>
   </form>
-
-  <app-button title="Save Changes" [callback]="onSaveForm()"></app-button>
-
-
-
-
-<!--  Image Uploader-->
-
-  <div class="container">
-    <div class="row">
-      <div class="drop-box" corpImgUpload (dropFiles)="onDropFiles($event)">
-        <span class="message">Drop File Images Here</span>
-      </div>
-    </div>
-    <div class="row">
-      <img *ngFor="let file of files" [src]="file.url" />
-    </div>
-  </div>
 
 </div>

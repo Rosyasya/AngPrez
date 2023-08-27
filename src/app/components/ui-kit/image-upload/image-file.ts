@@ -1,4 +1,3 @@
 export interface ImageFile {
-  file: File,
-  url: string,
+  uploadImage(file: File): Promise<any>
 }

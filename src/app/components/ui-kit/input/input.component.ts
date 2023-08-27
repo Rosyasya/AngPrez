@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -12,4 +12,10 @@ export class InputComponent {
   @Input() isDisabled: boolean = false;
   @Input() placeholder: string = '';
   @Input() isRequired: boolean = false;
+  @Input() value: string = '';
+  @Output() valueChange = new EventEmitter<string>();
+
+  handleInput(event: any){
+    this.valueChange.emit(event.target.value);
+  }
 }

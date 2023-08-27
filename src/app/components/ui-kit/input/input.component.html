@@ -5,6 +5,9 @@
     <input type="text" [ngStyle]="{'padding-left' : img !== '' ? '30px' : ''}"
                                   [placeholder]="placeholder"
                                   [disabled]="isDisabled"
-                                  [required]="isRequired">
+                                  [required]="isRequired"
+                                  [value]="value"
+                                  (input)="handleInput($event)"
+    >
   </div>
 </div>

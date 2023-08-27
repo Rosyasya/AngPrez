@@ -16,6 +16,7 @@ import { ButtonComponent } from './components/ui-kit/button/button.component';
 import { ImageUploadComponent } from './components/ui-kit/image-upload/image-upload.component';
 import { TabsComponent } from './components/ui-kit/tabs/tabs.component';
 import { SelectComponent } from './components/ui-kit/select/select.component';
+import {FormsModule} from "@angular/forms";
 
 const appRoutes: Routes = [
   {
@@ -73,6 +74,7 @@ const appRoutes: Routes = [
     RouterLink,
     RouterLinkActive,
     RouterModule.forRoot(appRoutes),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

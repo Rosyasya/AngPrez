@@ -1,6 +1,9 @@
 <button class="button" [ngStyle]="{'font-size' : size,
                                    'flex-direction': isReversed ? 'row-reverse' : ''}"
-                                    (click)="callback" [disabled]="isDisabled">
+                                    (click)="callback"
+                                    [disabled]="isDisabled"
+                                    [type]="type"
+>
   {{title}}
   <img [src]="img" [alt]="img">
 </button>

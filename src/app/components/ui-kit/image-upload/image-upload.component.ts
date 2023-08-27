@@ -1,5 +1,5 @@
-import {Component, EventEmitter, HostBinding, HostListener, Input, Output} from '@angular/core';
-import {ImageFile} from "./image-file";
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-image-upload',
@@ -7,59 +7,25 @@ import {ImageFile} from "./image-file";
   styleUrls: ['./image-upload.component.scss']
 })
 export class ImageUploadComponent {
+  constructor(private _http: HttpClient) {
+  }
+
   @Input() img: string = '';
+  @Output() imageChange = new EventEmitter<string>();
   @Input() label: string = '';
   @Input() title: string = '';
   @Input() width: string = '100%';
   @Input() height: string = '';
   @Input() isDisabled: boolean = false;
   @Input() name: string = '';
-  @Output() dropFiles: EventEmitter<ImageFile[]> = new EventEmitter()
-  @HostBinding('style.background') backgroundColor: any;
 
-  @HostListener('dragover', ['$event']) public dragOver(event: DragEvent) {
-    event.preventDefault();
-    event.stopPropagation();
-    this.backgroundColor = DropColor.OVER;
-  }
-
-  @HostListener('dragleave', ['$event']) public dragLeave(event: DragEvent) {
-    event.preventDefault();
-    event.stopPropagation();
-    this.backgroundColor = DropColor.DEFAULT;
-  }
-
-  @HostListener('drop', ['$event']) public drop(event: DragEvent) {
-    event.preventDefault();
-    event.stopPropagation();
-    this.backgroundColor = DropColor.DEFAULT;
-
-    let fileList = event.dataTransfer.files;
-    let files: ImageFile[] = [];
-    for (let i = 0; i < fileList.length; i++) {
-      const file = fileList[i];
-      const url = window.URL.createObjectURL(file);
-      files.push({file, url});
+  uploadImage(e: any) {
+    if(e.target.files) {
+      let reader = new FileReader();
+      reader.readAsDataURL(e.target.files[0]);
+      reader.onload=(event:any) => {
+        this.img = event.target.result;
+      }
     }
-
-    if (files.length > 0) {
-      this.dropFiles.emit(files);
     }
-  }
-
-}
-
-class DropColor {
-  public static DEFAULT = new DropColor('#C6E4F1');
-  public static OVER = new DropColor('#ACADAD');
-
-  public static colors(): DropColor[] {
-    return [
-      DropColor.DEFAULT,
-      DropColor.OVER,
-    ]
-  }
-
-  constructor(color: string) {
-  }
 }

@@ -7,9 +7,10 @@ import {Component, Input} from '@angular/core';
 })
 export class ButtonComponent {
   @Input() title?: string;
-  @Input() img?: string;
+  @Input() img: string = '';
   @Input() size: string = '14px';
   @Input() callback: any;
   @Input() isReversed: boolean = false;
   @Input() isDisabled?: boolean = false;
+  @Input() type: string = '';
 }

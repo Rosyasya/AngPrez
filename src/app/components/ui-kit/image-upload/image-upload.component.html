@@ -1,4 +1,4 @@
 <div>
   <img [src]="img" [alt]="img" [height]="height">
-  <input type="file" [name]="name">
+  <input type="file" [name]="name" (change)="uploadImage($event)">
 </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ImageFile} from "../../../../../components/ui-kit/image-upload/image-file";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-general',
@@ -7,15 +7,34 @@ import {ImageFile} from "../../../../../components/ui-kit/image-upload/image-fil
   styleUrls: ['./general.component.scss']
 })
 export class GeneralComponent {
+  theme: string = '';
+  branding: string = '';
+  domain: string = '{domain}';
   isSaved: boolean = false;
+  formInfo: Array<object> = [];
 
-  onSaveForm() {
+  onSaveForm(form: NgForm) {
     this.isSaved = true;
+    this.formInfo.push(
+      {
+        theme: this.theme,
+        branding: this.branding,
+        domain: this.domain,
+      }
+    )
+
+    console.log(this.formInfo);
   }
 
-  files: ImageFile[] = [];
+  handleTheme(event: any) {
+    this.theme = event;
+  }
 
-  onDropFiles(files: ImageFile[]): void {
-    this.files = [...this.files, ...files];
+  handleBranding(event: any) {
+    this.branding = event;
+  }
+
+  handleDomain(event: any) {
+    this.domain = event;
   }
 }
