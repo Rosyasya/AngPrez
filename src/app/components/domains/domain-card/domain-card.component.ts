@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {DomainCard} from "./domain-card";
+import {IDomains} from "../../../modules/sites/domains";
 
 @Component({
   selector: 'app-domain-card',
@@ -7,9 +7,5 @@ import {DomainCard} from "./domain-card";
   styleUrls: ['./domain-card.component.scss']
 })
 export class DomainCardComponent{
-  constructor() {
-  }
-
-  @Input() card: DomainCard;
-
+  @Input() card: IDomains;
 }

@@ -1,6 +1,7 @@
 .tab {
   margin-right: 32px;
   font-size: 14px;
+
   &__link {
     color: black;
     font-weight: 500;
@@ -11,13 +12,17 @@
     &:hover {
       color: #6FB295;
       padding-bottom: 4px;
-      border-bottom: 2px solid #6FB295;
-    }
-
-    &.active {
-      color: #6FB295;
-      padding-bottom: 4px;
-      border-bottom: 2px solid #6FB295;
+      border-bottom: 2px solid var(--primary-50);
+      border-bottom-left-radius: 2px;
+      border-bottom-right-radius: 2px;
     }
   }
+}
+
+.active {
+  color: #6FB295;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--primary-50);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }

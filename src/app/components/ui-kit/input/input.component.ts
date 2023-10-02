@@ -6,13 +6,13 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   styleUrls: ['./input.component.scss']
 })
 export class InputComponent {
-  @Input() img: string = '';
+  @Input() icon?: string;
   @Input() width: string = '100%';
-  @Input() label: string = '';
+  @Input() label?: string;
   @Input() isDisabled: boolean = false;
   @Input() placeholder: string = '';
   @Input() isRequired: boolean = false;
-  @Input() value: string = '';
+  @Input() value?: string = '';
   @Output() valueChange = new EventEmitter<string>();
 
   handleInput(event: any){

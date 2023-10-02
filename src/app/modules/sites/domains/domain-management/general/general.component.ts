@@ -1,40 +1,34 @@
 import { Component } from '@angular/core';
-import {NgForm} from "@angular/forms";
+import {IDomain} from "./igeneral";
 
 @Component({
   selector: 'app-general',
   templateUrl: './general.component.html',
   styleUrls: ['./general.component.scss']
 })
-export class GeneralComponent {
-  theme: string = '';
-  branding: string = '';
-  domain: string = '{domain}';
+export class GeneralComponent{
+  options: Array<object> = [
+    {
+      id: 0,
+      name: 'test1',
+    },
+    {
+      id: 1,
+      name: 'test2',
+    },
+  ]
   isSaved: boolean = false;
-  formInfo: Array<object> = [];
+  domain = new Domain();
 
-  onSaveForm(form: NgForm) {
+  onSaveForm() {
     this.isSaved = true;
-    this.formInfo.push(
-      {
-        theme: this.theme,
-        branding: this.branding,
-        domain: this.domain,
-      }
-    )
 
-    console.log(this.formInfo);
+    console.log(this.domain);
   }
+}
 
-  handleTheme(event: any) {
-    this.theme = event;
-  }
+export class Domain implements IDomain{
 
-  handleBranding(event: any) {
-    this.branding = event;
-  }
-
-  handleDomain(event: any) {
-    this.domain = event;
+  constructor(public branding = '', public domain = '{domain}', public theme = '', public logo = '', public icon = '') {
   }
 }

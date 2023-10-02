@@ -1,8 +1,8 @@
 <div class="input__wrapper" [ngStyle]="{'width': width}">
   <p class="input__label">{{label}}</p>
   <div class="input__container">
-    <img [src]="img" [alt]="img">
-    <input type="text" [ngStyle]="{'padding-left' : img !== '' ? '30px' : ''}"
+    <i [class]="'icon-' + icon"></i>
+    <input type="text" [ngStyle]="{'padding-left' : icon ? '30px' : ''}"
                                   [placeholder]="placeholder"
                                   [disabled]="isDisabled"
                                   [required]="isRequired"

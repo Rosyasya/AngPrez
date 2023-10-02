@@ -8,8 +8,12 @@ import {DomainTabs} from "../../../modules/sites/domains/domain-management/domai
   templateUrl: './tabs.component.html',
   styleUrls: ['./tabs.component.scss']
 })
-export class TabsComponent implements OnInit{
+export class TabsComponent{
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.params
+      .subscribe((params: Params) => {
+        this.id = +params['id'];
+      })
   }
 
   @Input() tabs: Array<TabItem>;
@@ -19,12 +23,5 @@ export class TabsComponent implements OnInit{
   switchTab(tab: DomainTabs) {
     this.activeTab = tab;
     this.router.navigate(['domains', this.id, tab.id]);
-  }
-
-  ngOnInit(): void {
-    this.activatedRoute.params
-      .subscribe((params: Params) => {
-        this.id = +params['id'];
-      })
   }
 }

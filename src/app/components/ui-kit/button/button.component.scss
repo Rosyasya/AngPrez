@@ -9,4 +9,17 @@
   align-self: end;
   font-weight: 500;
   font-family: Ubuntu, sans-serif;
+
+  i {
+    color: var(--secondary-grey-50) !important;
+  }
+}
+
+.primary {
+
+}
+
+.secondary {
+  padding: 6.5px;
+  background: transparent;
 }

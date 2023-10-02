@@ -1,4 +1,10 @@
-<div>
-  <img [src]="img" [alt]="img" [height]="height">
-  <input type="file" [name]="name" (change)="uploadImage($event)">
+<label class="label" for="upload">{{label}}</label>
+
+<div class="upload" [ngStyle]="{'width': width,
+                                'height': height}">
+  <i *ngIf="!img" class="icon-upload"></i>
+  <h4 *ngIf="!img">Choose file</h4>
+
+  <input type="file" id="upload" (change)="uploadImage($event)">
+  <img [src]="img" [alt]="img" *ngIf="img">
 </div>

@@ -19,8 +19,16 @@
       align-items: center;
       gap: 14px;
 
-      img {
+      i {
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 20px;
+        width: 20px;
+        background: var(--system-success-50);
+        color: white;
+        border-radius: 50px;
       }
     }
 
@@ -45,6 +53,7 @@
   }
 
   &__files {
+    width: 100%;
     display: flex;
     gap: 48px;
 

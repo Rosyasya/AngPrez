@@ -1,42 +1,28 @@
 <div class="general">
   <div class="general__saved" *ngIf="isSaved">
     <div class="general__saved-container">
-      <img src="../../../../../../assets/images/success.png" alt="success">
+      <i [class]="'icon-check'"></i>
       <h3>Changes saved</h3>
     </div>
-    <button (click)="isSaved = false"><img src="../../../../../../assets/images/cross.png" alt="cross"></button>
+    <app-button (callback)="isSaved = false" [icon]="'cross'" [class]="'secondary'"></app-button>
   </div>
 
-  <form #form="ngForm" (ngSubmit)="onSaveForm(form)">
+  <form #form="ngForm" (ngSubmit)="onSaveForm()">
     <div class="general__files">
-      <div class="general__files-container">
-        <h3>Logo</h3>
-        <label class="logo">
-          <input type="file">
-          <span class="circle"></span>
-          Choose file
-        </label>
-      </div>
-      <div class="general__files-container">
-        <h3>Favorite icon</h3>
-        <label class="icon">
-          <input type="file">
-          <span class="circle"></span>
-          Choose file
-        </label>
-      </div>
+      <app-image-upload [label]="'Logo'" [width]="'270px'" [height]="'120px'"></app-image-upload>
+      <app-image-upload [label]="'Favorite icon'" [width]="'120px'" [height]="'120px'"></app-image-upload>
     </div>
 
     <div class="general__text">
-      <app-select (valueChange)="handleTheme($event)" [label]="'Theme'" [placeholder]="'Select theme'" [showSearch]="true"></app-select>
+      <app-select [options]="options" [(value)]="this.domain.theme" [label]="'Theme'" [placeholder]="'Select theme'" [showSearch]="true"></app-select>
     </div>
 
     <div class="general__text">
-      <app-input (valueChange)="handleBranding($event)" [width]="'500px'" [label]="'Branding *'" [placeholder]="'Enter branding'"></app-input>
+      <app-input [(value)]="this.domain.branding" [width]="'500px'" [label]="'Branding *'" [placeholder]="'Enter branding'"></app-input>
     </div>
 
     <div class="general__text">
-      <app-input (valueChange)="handleDomain($event)" [width]="'500px'" [label]="'Domain'" [placeholder]="domain" [isDisabled]="true"></app-input>
+      <app-input [width]="'500px'" [label]="'Domain'" [placeholder]="this.domain.domain" [isDisabled]="true"></app-input>
     </div>
     <app-button title="Save Changes" [type]="'submit'"></app-button>
   </form>

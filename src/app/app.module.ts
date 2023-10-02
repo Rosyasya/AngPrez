@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/ui-kit/header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { DomainsComponent } from './modules/sites/domains.component';
 import {RouterLink, RouterLinkActive, RouterModule, Routes} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";

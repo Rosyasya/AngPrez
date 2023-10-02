@@ -6,7 +6,8 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   styleUrls: ['./select.component.scss']
 })
 export class SelectComponent {
-  @Input() options = [{name: 'test'}, {name: 'test1'}];
+  @Input() width?: string = '100%';
+  @Input() options: Array<any>;
   @Input() showSearch: boolean = false;
   @Input() label: string = '';
   @Input() placeholder: string = '';
@@ -22,7 +23,7 @@ export class SelectComponent {
     this.valueChange.emit(option.name);
   }
 
-  handleOption(event: any) {
-    console.log(event.target.value);
+  test(event: any) {
+    console.log(event);
   }
 }
