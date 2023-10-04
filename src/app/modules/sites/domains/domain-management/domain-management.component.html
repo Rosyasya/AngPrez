@@ -1,7 +1,10 @@
 <div class="domain">
   <div class="domain__container">
-    <h2>Domain Settings</h2>
-    
+    <div class="domain__container-header">
+      <h2>Domain Settings</h2>
+      <app-button [icon]="'cross'" [class]="'primary'"></app-button>
+    </div>
+
     <app-tabs [tabs]="tabs"></app-tabs>
 
     <router-outlet></router-outlet>

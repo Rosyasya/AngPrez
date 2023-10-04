@@ -1,5 +1,6 @@
 <div class="tabs">
   <ul class="tabs__list" *ngFor="let tab of tabs">
-    <app-tab-item (click)="switchTab(tab)" [active]="activeTab" [tab]="tab"></app-tab-item>
+    <app-tab-item (click)="switchTab(tab)" [tab]="tab"></app-tab-item>
+<!--    <app-tab-item (click)="switchTab(tab)" [active]="activeTab" [tab]="tab"></app-tab-item>-->
   </ul>
 </div>

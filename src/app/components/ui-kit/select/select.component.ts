@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-select',
@@ -13,7 +13,7 @@ export class SelectComponent {
   @Input() placeholder: string = '';
   @Input() value: string = '';
   @Output() valueChange = new EventEmitter<string>();
-
+  searchValue: string = '';
   open: boolean = false;
 
   selectOption(option: any) {
@@ -23,7 +23,9 @@ export class SelectComponent {
     this.valueChange.emit(option.name);
   }
 
-  test(event: any) {
-    console.log(event);
+  filterOptions() {
+    return this.options.filter((option: any) => {
+      return option.name.toLowerCase().includes(this.searchValue.toLowerCase().trim());
+    })
   }
 }

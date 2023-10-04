@@ -1,5 +1,6 @@
 <button class="button" [ngStyle]="{'font-size' : size,
-                                   'flex-direction': isReversed ? 'row-reverse' : ''}"
+                                   'flex-direction': isReversed ? 'row-reverse' : '',
+                                   'gap': isReversed ? '8px' : ''}"
                                     [class]="class"
                                     (click)="onClick()"
                                     [disabled]="isDisabled"
@@ -7,7 +8,8 @@
                                     [routerLink]="link"
 >
   {{title}}
-  <i [class]="'icon-' + icon" [ngStyle]="{'font-size': iconSize,
-                                       'color': iconColor}"></i>
+  <i [class]="'icon-' + icon" style="color: white" [ngStyle]="{'font-size': iconSize,
+                                          'color': iconColor}">
+  </i>
 
 </button>

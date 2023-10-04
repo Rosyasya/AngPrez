@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {IDomains} from "../../../modules/sites/domains";
+import {IDomains} from "../../../modules/sites/domains/domains";
 
 @Component({
   selector: 'app-domain-card',

@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {TabItem} from "./tab-item";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-tab-item',
@@ -7,6 +8,9 @@ import {TabItem} from "./tab-item";
   styleUrls: ['./tab-item.component.scss']
 })
 export class TabItemComponent{
+  constructor(public router: Router) {
+
+  }
   @Input() tab: TabItem;
-  @Input() active: TabItem;
+  // @Input() active: TabItem;
 }

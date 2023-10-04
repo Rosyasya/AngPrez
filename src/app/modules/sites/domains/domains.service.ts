@@ -8,7 +8,7 @@ export class DomainsService {
   info: Array<IDomains> = [
     {
       title: '{Site name}',
-      img: 'test 1',
+      img: '',
       domain: 'site.example.com',
       theme: 'name theme',
       id: 1,

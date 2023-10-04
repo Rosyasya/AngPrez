@@ -3,8 +3,8 @@
   overflow: hidden;
 
   &__container {
-    width: 95%;
-    height: calc(100vh - 172px);
+    width: 97%;
+    height: calc(100vh - 120px);
     border-radius: 16px;
     background: white;
     position: absolute;
@@ -13,8 +13,11 @@
     transform: translate(-50%, -48%);
     z-index: 999;
 
-    h2 {
-      margin: 20px 24px;
+    &-header {
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 }

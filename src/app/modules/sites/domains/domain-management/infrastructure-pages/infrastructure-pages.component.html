@@ -1,1 +1,24 @@
-<p>infrastructure-pages works!</p>
+<div class="infrastructure">
+
+  <div class="infrastructure__files">
+    <div class="infrastructure__files-container">
+      <img src="assets/images/doc-ads.svg" alt="ads">
+      <h3>File name</h3>
+    </div>
+  </div>
+
+  <div class="infrastructure__info">
+    <div class="infrastructure__info-header">
+      <h2>File name</h2>
+      <input type="file" (change)="test($event)">
+      <app-button (callback)="onEdit()" [class]="'primary'" [title]="'Edit file'" *ngIf="isDisabled"></app-button>
+
+      <div class="infrastructure__info-buttons" *ngIf="!isDisabled">
+        <app-button (callback)="onDiscard()" [class]="'primary'" [title]="'Discard'"></app-button>
+        <app-button (callback)="onSave()" [title]="'Save changes'"></app-button>
+      </div>
+    </div>
+
+    <textarea [disabled]="isDisabled">{{text}}</textarea>
+  </div>
+</div>

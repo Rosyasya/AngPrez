@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { DomainsComponent } from './modules/sites/domains.component';
+import { DomainsComponent } from './modules/sites/domains/domains.component';
 import {RouterLink, RouterLinkActive, RouterModule, Routes} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import { DomainCardComponent } from './components/domains/domain-card/domain-card.component';
@@ -17,6 +17,8 @@ import { ImageUploadComponent } from './components/ui-kit/image-upload/image-upl
 import { TabsComponent } from './components/ui-kit/tabs/tabs.component';
 import { SelectComponent } from './components/ui-kit/select/select.component';
 import {FormsModule} from "@angular/forms";
+import { PluginsComponent } from './modules/sites/domains/domain-management/plugins/plugins.component';
+import { PluginCardComponent } from './components/plugins/plugin-card/plugin-card.component';
 
 const appRoutes: Routes = [
   {
@@ -42,7 +44,7 @@ const appRoutes: Routes = [
       },
       {
         path: 'plugins',
-        component: InfrastructurePagesComponent,
+        component: PluginsComponent,
       },
       {
         path: 'layouts',
@@ -66,7 +68,9 @@ const appRoutes: Routes = [
     ButtonComponent,
     ImageUploadComponent,
     TabsComponent,
-    SelectComponent
+    SelectComponent,
+    PluginsComponent,
+    PluginCardComponent,
   ],
   imports: [
     BrowserModule,

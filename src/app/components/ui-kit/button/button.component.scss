@@ -8,18 +8,20 @@
   color: white;
   align-self: end;
   font-weight: 500;
-  font-family: Ubuntu, sans-serif;
+  font-family: inherit;
 
   i {
-    color: var(--secondary-grey-50) !important;
+    color: var(--secondary-grey-50);
   }
 }
 
 .primary {
-
+  background: var(--secondary-grey-10);
+  color: var(--secondary-grey-70);
 }
 
 .secondary {
   padding: 6.5px;
   background: transparent;
+  color: var(--secondary-grey-50);
 }

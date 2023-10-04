@@ -1,7 +1,7 @@
 .domain {
 
   &__container {
-    width: 95%;
+    width: 97%;
     padding: 20px 8px 0px 24px;
     height: calc(100vh - 120px);
     border-radius: 16px;
@@ -16,6 +16,7 @@
   &__grid {
     height: calc(100vh - 224px);
     margin-top: 24px;
+    padding-right: 8px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 180px);

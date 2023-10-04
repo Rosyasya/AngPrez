@@ -11,14 +11,14 @@
   <div class="options" *ngIf="open">
 
     <div class="input" *ngIf="showSearch">
-      <app-input [icon]="'search'" [placeholder]="'Search'" (valueChange)="test($event)"></app-input>
+      <app-input [(value)]="searchValue" [icon]="'search'" [placeholder]="'Search'"></app-input>
     </div>
     <ul class="options__list">
       <li class="options__no-result" *ngIf="!options.length">
         No result found
       </li>
       <li class="options__list-item"
-          *ngFor="let option of options"
+          *ngFor="let option of filterOptions()"
           (click)="selectOption(option)"
       >
           {{option.name}}
