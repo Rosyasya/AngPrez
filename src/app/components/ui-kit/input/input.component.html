@@ -1,5 +1,5 @@
-<div class="input__wrapper" [ngStyle]="{'width': width}">
-  <p class="input__label">{{label}}</p>
+<div class="input" [ngStyle]="{'width': width}">
+  <p class="input__label" *ngIf="label">{{label}}</p>
   <div class="input__container">
     <i [class]="'icon-' + icon"></i>
     <input type="text" [ngStyle]="{'padding-left' : icon ? '30px' : ''}"
@@ -8,7 +8,6 @@
                                   [required]="isRequired"
                                   [value]="value"
                                   (input)="handleInput($event)"
-                                  [(ngModel)]="ngModel"
     >
   </div>
 </div>

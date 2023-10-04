@@ -1,39 +1,17 @@
 .card {
-  height: 100%;
-  padding: 24px;
-  background: white;
+  padding: 16px;
   box-shadow: 0px 2px 12px 0px #8E93A826;
-  border-radius: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
 
-  &__header {
-    display: flex;
-    justify-content: space-between;
-
-    h3 {
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 28px;
-    }
-
-    button {
-      padding: 6px;
-      background: transparent;
-      cursor: pointer;
-      border: none;
-    }
-  }
-
-  &__options {
-    padding-top: 24px;
-    display: flex;
-    gap: 24px;
-  }
-
-  &__img {
+  &__image {
     position: relative;
-    height: 80px;
-    width: 47%;
-    background: var(--secondary-grey-10);
+    width: 48px;
+    height: 48px;
+    background: var(--secondary-grey-5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,38 +19,51 @@
     border-radius: 8px;
 
     i {
-      font-size: 20px;
-      color: var(--secondary-grey-50);
+      font-size: 24px;
+      color: var(--secondary-grey-30);
     }
 
     img {
       position: absolute;
-      width: 100%;
       height: 100%;
-      border-radius: 8px;
-      line-height: 78px;
+      width: 100%;
       text-align: center;
     }
   }
 
   &__info {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    align-items: start;
+    justify-content: space-between;
 
     &-container {
       display: flex;
-      gap: 8px;
+      flex-direction: column;
 
-      i {
-        font-size: 15px;
-        color: var(--secondary-grey-30);
+      h3 {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 16px;
+        color: var(--secondary-grey-90);
       }
 
-      a, h4 {
+      h4 {
         font-size: 14px;
         font-weight: 400;
+        line-height: 24px;
+        color: var(--secondary-grey-50);
       }
+    }
+
+    h5 {
+      padding: 4px 8px;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 14.5px;
+      color: var(--primary-50);
+      background: var(--primary-10);
+      border-radius: 50%;
     }
   }
 }

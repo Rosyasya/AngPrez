@@ -4,14 +4,14 @@
     <app-button [class]="'secondary'" [icon]="'settings'" [link]="card.id"></app-button>
   </div>
   <div class="card__options">
-    <div class="card__img">
+    <div class="card__image">
       <i class="icon-image" *ngIf="!card.img"></i>
       <img [src]="card.img" [alt]="card.title" *ngIf="card.img">
     </div>
     <div class="card__info">
       <div class="card__info-container">
-        <i class="icon-domen"></i>
-        <a [href]="card.domain">{{card.domain}}</a>
+        <i class="icon-domain"></i>
+        <a [routerLink]="'/content/' + card.id + '/' + card.title">{{card.domain}}</a>
       </div>
       <div class="card__info-container">
         <i class="icon-theme"></i>

@@ -2,6 +2,8 @@
   padding: 10px 23px;
   background: var(--primary-50);
   display: flex;
+  align-items: center;
+  gap: 8px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -9,19 +11,36 @@
   align-self: end;
   font-weight: 500;
   font-family: inherit;
+  line-height: 20px;
 
   i {
     color: var(--secondary-grey-50);
   }
 }
 
+.button:disabled {
+  color: var(--secondary-grey-40);
+
+  i {
+    color: inherit !important;
+  }
+}
+
 .primary {
   background: var(--secondary-grey-10);
   color: var(--secondary-grey-70);
+
+  i {
+    color: var(--secondary-grey-50) !important;
+  }
 }
 
 .secondary {
   padding: 6.5px;
   background: transparent;
   color: var(--secondary-grey-50);
+
+  i {
+    color: var(--secondary-grey-40) !important;
+  }
 }

@@ -1,5 +1,4 @@
 .card {
-  height: 100%;
   padding: 24px;
   background: white;
   box-shadow: 0px 2px 12px 0px #8E93A826;
@@ -29,10 +28,10 @@
     gap: 24px;
   }
 
-  &__img {
+  &__image {
     position: relative;
-    height: 80px;
     width: 47%;
+    height: 80px;
     background: var(--secondary-grey-10);
     display: flex;
     align-items: center;

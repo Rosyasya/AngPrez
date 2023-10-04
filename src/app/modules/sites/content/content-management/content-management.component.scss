@@ -1,0 +1,19 @@
+.content__table {
+  padding: 24px 24px 0px 24px;
+
+  &-header {
+    padding: 4px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--secondary-grey-5);
+
+    h5 {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 20px;
+      color: var(--secondary-grey-50);
+      cursor: pointer;
+    }
+  }
+}

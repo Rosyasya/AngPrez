@@ -19,6 +19,13 @@ import { SelectComponent } from './components/ui-kit/select/select.component';
 import {FormsModule} from "@angular/forms";
 import { PluginsComponent } from './modules/sites/domains/domain-management/plugins/plugins.component';
 import { PluginCardComponent } from './components/plugins/plugin-card/plugin-card.component';
+import { SearchComponent } from './components/ui-kit/search/search.component';
+import { ContentManagementComponent } from './modules/sites/content/content-management/content-management.component';
+import { ContentCardComponent } from './components/content/content-card/content-card.component';
+import { PaginationComponent } from './components/ui-kit/pagination/pagination.component';
+import { TypeComponent } from './modules/sites/content/content-management/type/type.component';
+import { DetailsComponent } from './modules/sites/content/content-management/details/details.component';
+import {ContentComponent} from "./modules/sites/content/content.component";
 
 const appRoutes: Routes = [
   {
@@ -32,7 +39,7 @@ const appRoutes: Routes = [
       {
         path: '',
         redirectTo: 'general',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
       {
         path: 'general',
@@ -51,7 +58,30 @@ const appRoutes: Routes = [
         component: InfrastructurePagesComponent,
       },
     ],
-  }
+  },
+  {
+    path: 'content/:id/:name',
+    component: ContentComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'info',
+        pathMatch: 'full',
+      },
+      {
+        path: 'info',
+        component: ContentManagementComponent,
+      },
+      {
+        path: 'type',
+        component: TypeComponent,
+      },
+      {
+        path: 'details',
+        component: DetailsComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
@@ -71,6 +101,13 @@ const appRoutes: Routes = [
     SelectComponent,
     PluginsComponent,
     PluginCardComponent,
+    SearchComponent,
+    ContentManagementComponent,
+    ContentCardComponent,
+    PaginationComponent,
+    TypeComponent,
+    DetailsComponent,
+    ContentComponent,
   ],
   imports: [
     BrowserModule,

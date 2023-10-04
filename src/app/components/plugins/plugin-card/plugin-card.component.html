@@ -1,22 +1,16 @@
 <div class="card">
-  <div class="card__header">
-    <h3>{{card.title}}</h3>
-    <app-button [class]="'secondary'" [icon]="'settings'" [link]="card.id"></app-button>
+  <div class="card__image">
+    <i class="icon-puzzle"></i>
+<!--    <img src="" alt="test">-->
   </div>
-  <div class="card__options">
-    <div class="card__img">
-      <i class="icon-image" *ngIf="!card.img"></i>
-      <img [src]="card.img" [alt]="card.title" *ngIf="card.img">
+
+  <div class="card__info">
+
+    <div class="card__info-container">
+      <h3>Adskeeper</h3>
+      <h4>Custom</h4>
     </div>
-    <div class="card__info">
-      <div class="card__info-container">
-        <i class="icon-domen"></i>
-        <a [href]="card.domain">{{card.domain}}</a>
-      </div>
-      <div class="card__info-container">
-        <i class="icon-theme"></i>
-        <h4>{{card.theme}}</h4>
-      </div>
-    </div>
+
+    <h5>Site</h5>
   </div>
 </div>

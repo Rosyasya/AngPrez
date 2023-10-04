@@ -12,4 +12,29 @@
       gap: 16px;
     }
   }
+
+  &__grid {
+    height: calc(100vh - 326px);
+    margin: 24px 8px 0px 0px;
+    padding: 0px 8px 0px 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 80px);
+    grid-gap: 16px;
+    overflow-y: scroll;
+  }
+
+  &__grid::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &__grid::-webkit-scrollbar-track {
+    background: #F8F9FA;
+    border-radius: 50px;
+  }
+
+  &__grid::-webkit-scrollbar-thumb {
+    background: var(--secondary-grey-20);
+    border-radius: 50px;
+  }
 }

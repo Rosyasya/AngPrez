@@ -7,7 +7,7 @@ import {IDomains} from "./domains";
 export class DomainsService {
   info: Array<IDomains> = [
     {
-      title: '{Site name}',
+      title: 'Test site name',
       img: '',
       domain: 'site.example.com',
       theme: 'name theme',

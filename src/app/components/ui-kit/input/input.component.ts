@@ -13,7 +13,6 @@ export class InputComponent {
   @Input() placeholder: string = '';
   @Input() isRequired: boolean = false;
   @Input() value?: string = '';
-  @Input() ngModel?: string = '';
   @Output() valueChange = new EventEmitter<string>();
 
   handleInput(event: any){

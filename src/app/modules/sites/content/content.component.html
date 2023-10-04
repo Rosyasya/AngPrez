@@ -1,0 +1,21 @@
+<div class="content">
+
+  <div class="content__header">
+    <div class="content__header-container">
+      <h2>Site name</h2>
+      <app-button [link]="'/domains/' + id" [icon]="'settings'" [title]="'Settings'" [isReversed]="true" [class]="'secondary'"></app-button>
+    </div>
+
+    <div class="content__header-options">
+      <div class="content__header-options__container">
+        <app-search [width]="'400px'"></app-search>
+        <app-button [icon]="'filter'" [isReversed]="true" [class]="'primary'" [title]="'Filters'"></app-button>
+      </div>
+
+      <app-button [link]="'type'" [icon]="'plus'" [iconColor]="'white'" [title]="'Add Content'" [isReversed]="true"></app-button>
+    </div>
+
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

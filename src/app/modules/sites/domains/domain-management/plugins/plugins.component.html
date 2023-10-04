@@ -1,10 +1,14 @@
 <div class="plugins">
   <div class="plugins__header">
       <div class="plugins__header-options">
-        <app-input [placeholder]="'Search'" [icon]="'search'"></app-input>
+        <app-search [width]="'400px'"></app-search>
         <app-button [icon]="'filter'" [isReversed]="true" [class]="'primary'" [title]="'Filters'"></app-button>
       </div>
 
     <app-button [icon]="'plus'" [iconColor]="'white'" [title]="'Add Plugin'" [isReversed]="true"></app-button>
+  </div>
+
+  <div class="plugins__grid">
+    <app-plugin-card *ngFor="let card of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]"></app-plugin-card>
   </div>
 </div>

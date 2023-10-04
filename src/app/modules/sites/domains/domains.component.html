@@ -2,9 +2,7 @@
   <div class="domain__container">
     <h2>Sites</h2>
     <div class="domain__grid">
-      <div class="domain__grid-card" *ngFor="let card of domains">
-        <app-domain-card [card]="card" ></app-domain-card>
-      </div>
+      <app-domain-card *ngFor="let card of domains" [card]="card"></app-domain-card>
     </div>
   </div>
 </div>

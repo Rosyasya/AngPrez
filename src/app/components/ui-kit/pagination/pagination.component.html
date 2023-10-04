@@ -1,0 +1,18 @@
+<div class="pagination">
+  <div class="pagination__item">
+    <app-button [icon]="'double-arrow-left'" [iconSize]="'18px'" [class]="'secondary'"></app-button>
+  </div>
+  <div class="pagination__item">
+    <app-button [icon]="'arrow-left'" [title]="'Previous'" [iconSize]="'10px'" [isReversed]="true" [class]="'secondary'"></app-button>
+  </div>
+  <div class="pagination__item">
+    <p>Page</p>
+    <input value="1" type="number" min="0">
+  </div>
+  <div class="pagination__item">
+    <app-button [icon]="'arrow-right'" [iconSize]="'10px'" [title]="'Next'" [class]="'secondary'"></app-button>
+  </div>
+  <div class="pagination__item">
+    <app-button [icon]="'double-arrow-right'" [iconSize]="'18px'" [class]="'secondary'"></app-button>
+  </div>
+</div>

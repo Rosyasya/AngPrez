@@ -5,11 +5,16 @@
   --secondary-grey-10: #F1F2F4;
   --secondary-grey-20: #E6E6ED;
   --secondary-grey-30: #CBCEDA;
+  --secondary-grey-40: #B2B5C5;
   --secondary-grey-50: #8E93A8;
   --secondary-grey-60: #555C7A;
   --secondary-grey-70: #2B334A;
   --secondary-grey-80: #171F33;
+  --secondary-grey-90: #111727;
+
+  --primary-10: #E2F0EA;
   --primary-50: #6FB295;
+
   --system-success-50: #287D3C;
   --system-success-10: #EDF9F0;
 }
@@ -60,6 +65,9 @@ a {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-puzzle:before {
+  content: "\e95c";
+}
 .icon-upload:before {
   content: "\e900";
 }
@@ -105,7 +113,7 @@ a {
 .icon-theme:before {
   content: "\e956";
 }
-.icon-domen:before {
+.icon-domain:before {
   content: "\e957";
 }
 .icon-settings:before {
