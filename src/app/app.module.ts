@@ -23,58 +23,60 @@ import { SearchComponent } from './components/ui-kit/search/search.component';
 import { ContentManagementComponent } from './modules/sites/domains/domain-management/content/content-management/content-management.component';
 import { ContentCardComponent } from './components/content/content-card/content-card.component';
 import { PaginationComponent } from './components/ui-kit/pagination/pagination.component';
-import {ContentComponent} from "./modules/sites/domains/domain-management/content/content.component";
 import { ContentDashboardComponent } from './modules/sites/domains/domain-management/content/content-dashboard/content-dashboard.component';
+import { StepperComponent } from './components/stepper/stepper.component';
+import {ContentComponent} from "./modules/sites/domains/domain-management/content/content.component";
 
 const appRoutes: Routes = [
   {
     path: 'domains',
-    component: DomainsComponent,
-  },
-  {
-    path: 'domains/:id',
-    component: DomainManagementComponent,
     children: [
       {
         path: '',
-        redirectTo: 'general',
-        pathMatch: 'full',
+        component: DomainsComponent,
       },
       {
-        path: 'general',
-        component: GeneralComponent,
-      },
-      {
-        path: 'infrastructure',
-        component: InfrastructurePagesComponent,
-      },
-      {
-        path: 'plugins',
-        component: PluginsComponent,
-      },
-      {
-        path: 'layouts',
-        component: InfrastructurePagesComponent,
-      },
-      {
-        path: 'content',
-        component: ContentComponent,
+        path: ':id',
+        component: DomainManagementComponent,
         children: [
           {
             path: '',
-            component: ContentDashboardComponent,
+            redirectTo: 'general',
+            pathMatch: 'full',
           },
           {
-            path: ':id',
-            component: ContentManagementComponent,
+            path: 'general',
+            component: GeneralComponent,
           },
           {
-            path: 'create',
-            component: ContentManagementComponent,
+            path: 'infrastructure',
+            component: InfrastructurePagesComponent,
           },
-        ]
+          {
+            path: 'plugins',
+            component: PluginsComponent,
+          },
+          {
+            path: 'layouts',
+            component: InfrastructurePagesComponent,
+          },
+        ],
       },
-    ],
+    ]
+  },
+  {
+    path: 'content/:id',
+    component: ContentComponent,
+    children: [
+      {
+        path: '',
+        component: ContentDashboardComponent,
+      },
+      {
+        path: 'create',
+        component: ContentManagementComponent,
+      },
+    ]
   },
 ];
 
@@ -99,8 +101,9 @@ const appRoutes: Routes = [
     ContentManagementComponent,
     ContentCardComponent,
     PaginationComponent,
-    ContentComponent,
     ContentDashboardComponent,
+    StepperComponent,
+    ContentComponent,
   ],
   imports: [
     BrowserModule,

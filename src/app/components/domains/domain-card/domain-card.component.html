@@ -11,7 +11,7 @@
     <div class="card__info">
       <div class="card__info-container">
         <i class="icon-domain"></i>
-        <a [routerLink]="card.id + '/content'">{{card.domain}}</a>
+        <a [routerLink]="'/content/' + card.id">{{card.domain}}</a>
       </div>
       <div class="card__info-container">
         <i class="icon-theme"></i>

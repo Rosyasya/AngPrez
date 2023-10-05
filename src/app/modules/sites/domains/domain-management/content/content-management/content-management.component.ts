@@ -5,4 +5,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./content-management.component.scss']
 })
 export class ContentManagementComponent {
+
 }

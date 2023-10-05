@@ -1,0 +1,31 @@
+.content {
+  width: 97%;
+  height: calc(100vh - 120px);
+  border-radius: 16px;
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -48%);
+  z-index: 999;
+
+  &__header {
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    &-container {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    &-buttons {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ActivatedRoute, Params, Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-content',
@@ -8,11 +8,9 @@ import {ActivatedRoute, Params, Router} from "@angular/router";
 })
 export class ContentComponent {
   constructor(public router: Router, private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.params
-      .subscribe((params: Params) => {
-        this.id = params['id'];
-      })
+    this.id = activatedRoute.snapshot.params['id'];
   }
-
   id: number;
+  name: string = '{{Site name}}';
+  content: string = 'Create content';
 }
