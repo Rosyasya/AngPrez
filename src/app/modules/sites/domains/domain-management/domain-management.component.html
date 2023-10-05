@@ -1,12 +1,39 @@
 <div class="domain">
-  <div class="domain__container">
-    <div class="domain__container-header">
-      <h2>Domain Settings</h2>
-      <app-button [link]="'/domains'" [icon]="'cross'" [class]="'primary'"></app-button>
+    <div class="domain__header">
+      <div class="domain__header-container">
+        <h2>Domain Settings</h2>
+
+        <div class="domain__header-steps">
+          <div class="domain__header-steps__container">
+            <div class="circle">
+              <i class="icon-check"></i>
+            </div>
+            <p>Type</p>
+          </div>
+          <div class="domain__header-steps__container active">
+            <div class="circle active">
+              <i class="icon-check"></i>
+            </div>
+            <p>Details</p>
+          </div>
+          <div class="domain__header-steps__container done">
+            <div class="circle done">
+              <i class="icon-check"></i>
+            </div>
+            <p>Content</p>
+          </div>
+          <div class="line"></div>
+        </div>
+      </div>
+
+      <app-button [link]="'/domains/' + id" [icon]="'settings'" [title]="'Settings'" [isReversed]="true" [class]="'secondary'"></app-button>
+      <div class="domain__header-buttons">
+        <app-button [title]="'Next step'"></app-button>
+        <app-button [link]="'/domains'" [icon]="'cross'" [class]="'primary'"></app-button>
+      </div>
     </div>
 
     <app-tabs [tabs]="tabs"></app-tabs>
 
     <router-outlet></router-outlet>
-  </div>
 </div>

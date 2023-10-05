@@ -1,0 +1,25 @@
+<div class="content__dashboard">
+  <div class="content__dashboard-options">
+    <div class="content__dashboard-options__container">
+      <app-search [width]="'400px'"></app-search>
+      <app-button [icon]="'filter'" [isReversed]="true" [class]="'primary'" [title]="'Filters'"></app-button>
+    </div>
+
+    <app-button [link]="'create'" [icon]="'plus'" [iconColor]="'white'" [title]="'Add Content'" [isReversed]="true"></app-button>
+  </div>
+
+  <div class="content__dashboard-header">
+    <h5>Title</h5>
+    <h5>Status</h5>
+    <h5>Type</h5>
+    <h5>Trending</h5>
+    <h5>Category</h5>
+    <h5>Author</h5>
+    <h5>Date</h5>
+    <h5>Action</h5>
+  </div>
+
+  <app-content-card *ngFor="let card of [1,2,3,4,5,6,7,8,9,10]" [id]="card"></app-content-card>
+
+  <app-pagination></app-pagination>
+</div>

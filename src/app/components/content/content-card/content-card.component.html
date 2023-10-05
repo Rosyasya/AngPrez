@@ -2,8 +2,8 @@
 
   <div class="card__image">
     <i class="icon-image"></i>
-<!--    <img src="" alt="test">-->
-    <p>1</p>
+    <img src="" alt="test">
+    <p>{{id}}</p>
   </div>
 
   <h4>The More Important the Work, the More Important the Rest</h4>
@@ -16,7 +16,7 @@
 
   <div class="card__buttons">
     <app-button [class]="'secondary'" [icon]="'link'" [iconSize]="'8px'"></app-button>
-    <app-button [class]="'secondary'" [icon]="'arrow-right'" [iconSize]="'10px'"></app-button>
+    <app-button [link]="id" [class]="'secondary'" [icon]="'arrow-right'" [iconSize]="'10px'"></app-button>
   </div>
 
 </div>

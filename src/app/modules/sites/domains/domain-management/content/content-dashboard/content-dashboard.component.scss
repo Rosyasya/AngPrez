@@ -1,7 +1,20 @@
-.content__table {
+.content__dashboard {
   padding: 24px 24px 0px 24px;
 
+  &-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__container {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+  }
+
   &-header {
+    margin-top: 24px;
     padding: 4px 16px;
     display: flex;
     align-items: center;
