@@ -3,14 +3,14 @@
   <div class="content__header" [ngStyle]="{'border-bottom': router.url.includes('create') ? '2px solid var(--secondary-grey-20)' : ''}">
     <div class="content__header-container">
       <h2>{{router.url.includes('create') ? content : name}}</h2>
-      <app-stepper [stepper]="stepper" *ngIf="router.url.includes('create')"></app-stepper>
+      <app-stepper [activeStep]="activeStep" (stepChange)="getActiveStep($event)" [stepper]="stepper" *ngIf="router.url.includes('create')"></app-stepper>
     </div>
 
     <div class="content__header-buttons" *ngIf="router.url.includes('create')">
-      <app-button [icon]="'arrow-left'" [title]="'Back'" [class]="'secondary'" [isReversed]="true"></app-button>
-      <app-button [title]="'Rewrite'" [isReversed]="true"></app-button>
-      <app-button [title]="'Save'" [isReversed]="true"></app-button>
-      <app-button [title]="'Next step'"></app-button>
+      <app-button (callback)="back()" *ngIf="showBackButton()" [icon]="'arrow-left'" [title]="'Back'" [class]="'secondary'" [isReversed]="true"></app-button>
+      <app-button *ngIf="showOptionButton()" [title]="'Rewrite'" [isReversed]="true"></app-button>
+      <app-button *ngIf="showOptionButton()" [title]="'Save'" [isReversed]="true"></app-button>
+      <app-button (callback)="next()" *ngIf="showNextButton()" [title]="'Next step'"></app-button>
       <app-button [link]="'/content/' + id" [icon]="'cross'" [class]="'primary'"></app-button>
     </div>
     <app-button [link]="'/domains/' + id" [icon]="'settings'" [title]="'Settings'" [isReversed]="true" [class]="'secondary'" *ngIf="!router.url.includes('create')"></app-button>

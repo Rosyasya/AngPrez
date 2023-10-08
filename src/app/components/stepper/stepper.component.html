@@ -4,22 +4,6 @@
       <i class="icon-check"></i>
     </div>
     <p>{{step}}</p>
+    <div class="line" *ngIf="isLastStep(i)"></div>
   </div>
-<!--  <div class="stepper__container" [ngClass]="{'active': steps[1].action == 'active',-->
-<!--                                              'done': steps[1].action == 'done'}">-->
-<!--    <div class="circle" [ngClass]="{'active': steps[1].action == 'active',-->
-<!--                                              'done': steps[1].action == 'done'}">-->
-<!--      <i class="icon-check"></i>-->
-<!--    </div>-->
-<!--    <p>{{steps[1].name}}</p>-->
-<!--  </div>-->
-<!--  <div class="stepper__container" [ngClass]="{'active': steps[2].action == 'active',-->
-<!--                                              'done': steps[2].action == 'done'}">-->
-<!--    <div class="circle" [ngClass]="{'active': steps[2].action == 'active',-->
-<!--                                              'done': steps[2].action == 'done'}">-->
-<!--      <i class="icon-check"></i>-->
-<!--    </div>-->
-<!--    <p>{{steps[2].name}}</p>-->
-<!--  </div>-->
-  <div class="line"></div>
 </div>

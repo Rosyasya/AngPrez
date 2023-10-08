@@ -1,7 +1,6 @@
 .stepper {
   display: flex;
   align-items: center;
-  gap: 24px;
 
   &__container {
     padding: 0px 8px;
@@ -25,7 +24,6 @@
 }
 
 .circle {
-  position: relative;
   width: 16px;
   height: 16px;
   background: var(--secondary-grey-30);
@@ -37,7 +35,7 @@
 
   i {
     color: var(--primary-50);
-    position: absolute;
+    //position: absolute;
     font-size: 7.5px;
     visibility: hidden;
   }
@@ -60,9 +58,7 @@
 }
 
 .line {
-  position: absolute;
-  width: 280px;
+  width: 24px;
   height: 1px;
   background: var(--secondary-grey-20);
-  z-index: -1;
 }
