@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
+import {StepperComponent} from "../../../../../components/stepper/stepper.component";
 
 @Component({
   selector: 'app-content',
@@ -13,4 +14,5 @@ export class ContentComponent {
   id: number;
   name: string = '{{Site name}}';
   content: string = 'Create content';
+  stepper: StepperComponent = new StepperComponent(["Type", "Details", "Content"]);
 }

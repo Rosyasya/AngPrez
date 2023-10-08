@@ -7,7 +7,7 @@
                                     [routerLink]="link"
 >
   {{title}}
-  <i [class]="'icon-' + icon" style="color: white" [ngStyle]="{'font-size': iconSize,
+  <i *ngIf="icon" [class]="'icon-' + icon" style="color: white" [ngStyle]="{'font-size': iconSize,
                                           'color': iconColor}">
   </i>
 

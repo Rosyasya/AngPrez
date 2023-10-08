@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <p class="wrapper__label" *ngIf="label">{{label}}</p>
+  <div class="textarea" [ngStyle]="{'width': width,
+                                    'height': height}">
+    <textarea [placeholder]="placeholder"
+              [value]="value"
+              [(ngModel)]="value"
+              (input)="handleInput($event)"
+              (keydown)="handleLimit($event)"></textarea>
+    <p class="textarea__limit" *ngIf="limit">{{value.length}}/{{limit}}</p>
+  </div>
+</div>

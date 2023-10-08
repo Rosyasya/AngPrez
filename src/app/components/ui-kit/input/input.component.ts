@@ -16,6 +16,9 @@ export class InputComponent {
   @Output() valueChange = new EventEmitter<string>();
 
   handleInput(event: any){
+    event.stopPropagation();
+    event.preventDefault();
+
     this.valueChange.emit(event.target.value);
   }
 }

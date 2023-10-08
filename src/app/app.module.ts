@@ -26,6 +26,8 @@ import { PaginationComponent } from './components/ui-kit/pagination/pagination.c
 import { ContentDashboardComponent } from './modules/sites/domains/domain-management/content/content-dashboard/content-dashboard.component';
 import { StepperComponent } from './components/stepper/stepper.component';
 import {ContentComponent} from "./modules/sites/domains/domain-management/content/content.component";
+import { TextareaComponent } from './components/ui-kit/textarea/textarea.component';
+import { CheckboxComponent } from './components/ui-kit/checkbox/checkbox.component';
 
 const appRoutes: Routes = [
   {
@@ -104,6 +106,8 @@ const appRoutes: Routes = [
     ContentDashboardComponent,
     StepperComponent,
     ContentComponent,
+    TextareaComponent,
+    CheckboxComponent,
   ],
   imports: [
     BrowserModule,

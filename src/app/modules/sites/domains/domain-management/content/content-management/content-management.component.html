@@ -1,22 +1,36 @@
 <div class="management">
-  <app-input [width]="'800px'" [placeholder]="'e. g. Top best movies of all time'" [label]="'Name'" [isRequired]="true"></app-input>
 
-  <div class="management__container">
-    <h3>Choose type of management</h3>
+  <div class="type" *ngIf="false">
+    <app-input [width]="'800px'" [placeholder]="'e. g. Top best movies of all time'" [label]="'Name'" [isRequired]="true"></app-input>
 
-    <div class="management__card-container">
-      <div class="management__card">
-        <img src="assets/images/gallery.svg" alt="Gallery">
-        <h2>Gallery</h2>
-      </div>
-      <div class="management__card">
-        <img src="assets/images/article.svg" alt="Article">
-        <h2>Article</h2>
-      </div>
-      <div class="management__card">
-        <img src="assets/images/quiz.svg" alt="Quiz">
-        <h2>Quiz</h2>
+    <div class="type__container">
+      <h3>Choose type of management</h3>
+
+      <div class="type__card-container">
+        <div class="type__card">
+          <img src="assets/images/gallery.svg" alt="Gallery">
+          <h2>Gallery</h2>
+        </div>
+        <div class="type__card">
+          <img src="assets/images/article.svg" alt="Article">
+          <h2>Article</h2>
+        </div>
+        <div class="type__card">
+          <img src="assets/images/quiz.svg" alt="Quiz">
+          <h2>Quiz</h2>
+        </div>
       </div>
     </div>
+  </div>
+
+  <div class="details" *ngIf="false">
+    <app-input [width]="'500px'" [placeholder]="'https://test.fastpress.prezna.com'" [icon]="'link'"></app-input>
+    <app-image-upload [width]="'500px'" [height]="'96px'" [label]="'Featured image'"></app-image-upload>
+    <app-select [placeholder]="'Select'" [label]="'Category'"></app-select>
+    <app-select [placeholder]="'Select'" [label]="'Author'"></app-select>
+    <app-select [placeholder]="'Select'" [label]="'Tag'"></app-select>
+    <app-checkbox [title]="'Show on landing'"></app-checkbox>
+    <app-checkbox [title]="'Trending'"></app-checkbox>
+    <app-textarea [label]="'Content description'" [width]="'500px'" [limit]="250"></app-textarea>
   </div>
 </div>
