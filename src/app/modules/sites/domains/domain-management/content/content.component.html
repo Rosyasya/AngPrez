@@ -1,20 +1,34 @@
 <div class="content">
 
-  <div class="content__header" [ngStyle]="{'border-bottom': router.url.includes('create') ? '2px solid var(--secondary-grey-20)' : ''}">
-    <div class="content__header-container">
-      <h2>{{router.url.includes('create') ? content : name}}</h2>
-      <app-stepper [activeStep]="activeStep" (stepChange)="getActiveStep($event)" [stepper]="stepper" *ngIf="router.url.includes('create')"></app-stepper>
-    </div>
-
-    <div class="content__header-buttons" *ngIf="router.url.includes('create')">
-      <app-button (callback)="back()" *ngIf="showBackButton()" [icon]="'arrow-left'" [title]="'Back'" [class]="'secondary'" [isReversed]="true"></app-button>
-      <app-button *ngIf="showOptionButton()" [title]="'Rewrite'" [isReversed]="true"></app-button>
-      <app-button *ngIf="showOptionButton()" [title]="'Save'" [isReversed]="true"></app-button>
-      <app-button (callback)="next()" *ngIf="showNextButton()" [title]="'Next step'"></app-button>
-      <app-button [link]="'/content/' + id" [icon]="'cross'" [class]="'primary'"></app-button>
-    </div>
-    <app-button [link]="'/domains/' + id" [icon]="'settings'" [title]="'Settings'" [isReversed]="true" [class]="'secondary'" *ngIf="!router.url.includes('create')"></app-button>
+  <div class="content__header">
+    <h2>Site name</h2>
+    <app-button [link]="'/content/' + id" [icon]="'cross'" [class]="'primary'"></app-button>
   </div>
 
-  <router-outlet></router-outlet>
+  <div class="content__dashboard">
+    <div class="content__dashboard-options">
+      <div class="content__dashboard-options__container">
+        <app-search [width]="'400px'"></app-search>
+        <app-button [icon]="'filter'" [isReversed]="true" [class]="'primary'" [title]="'Filters'"></app-button>
+      </div>
+
+      <app-button [link]="'create'" [icon]="'plus'" [iconColor]="'white'" [title]="'Add Content'" [isReversed]="true"></app-button>
+    </div>
+
+    <div class="content__dashboard-header">
+      <h5>Title</h5>
+      <h5>Status</h5>
+      <h5>Type</h5>
+      <h5>Trending</h5>
+      <h5>Category</h5>
+      <h5>Author</h5>
+      <h5>Date</h5>
+      <h5>Action</h5>
+    </div>
+
+    <app-content-card *ngFor="let card of [1,2,3,4,5,6,7,8,9,10]" [id]="card"></app-content-card>
+
+    <app-pagination></app-pagination>
+  </div>
+
 </div>

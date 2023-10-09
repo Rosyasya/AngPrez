@@ -12,7 +12,9 @@
   --secondary-grey-80: #171F33;
   --secondary-grey-90: #111727;
 
+  --primary-5: #F1F7F4;
   --primary-10: #E2F0EA;
+  --primary-30: #A9D1BF;
   --primary-50: #6FB295;
 
   --system-success-50: #287D3C;
@@ -65,6 +67,15 @@ a {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-extend:before {
+  content: "\e904";
+}
+.icon-favorite:before {
+  content: "\e905";
+}
+.icon-delete:before {
+  content: "\e903";
+}
 .icon-puzzle:before {
   content: "\e95c";
 }

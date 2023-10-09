@@ -7,7 +7,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class SelectComponent {
   @Input() width?: string = '100%';
-  @Input() options: Array<any>;
+  @Input() options: Array<any> = [];
   @Input() showSearch: boolean = false;
   @Input() label: string = '';
   @Input() placeholder: string = '';

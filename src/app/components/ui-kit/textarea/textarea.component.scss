@@ -1,4 +1,5 @@
 .wrapper {
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -13,6 +14,7 @@
 }
 
 .textarea {
+  width: 100%;
   position: relative;
 
   textarea {

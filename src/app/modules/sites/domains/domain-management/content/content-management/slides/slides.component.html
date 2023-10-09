@@ -1,0 +1,45 @@
+<div class="wrapper">
+
+  <div class="options">
+    <app-input [label]="'Slide title'" [placeholder]="'e. g. Your amazing title'"></app-input>
+    <div class="options__container">
+      <div class="container">
+        <div class="options__container-img">
+          <app-image-upload [height]="'200px'" [label]="'Media'"></app-image-upload>
+          <app-input [placeholder]="'e. g. Unsplash'" [label]="'Image caption'"></app-input>
+        </div>
+      </div>
+      <div class="container">
+        <app-textarea [height]="'100%'" [label]="'Content above'"></app-textarea>
+      </div>
+      <div class="container">
+        <app-textarea [height]="'100%'" [label]="'Content below'"></app-textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="slides">
+    <div class="slides__status">
+      <h3>Status</h3>
+      <app-select [value]="'Draft'"></app-select>
+    </div>
+    <div class="slides__options">
+      <h3>Slides</h3>
+      <div class="slides__options-buttons">
+        <app-button [icon]="'delete'" [class]="'secondary'"></app-button>
+        <app-button [icon]="'favorite'" [class]="'secondary'"></app-button>
+        <app-button [icon]="'extend'" [class]="'secondary'"></app-button>
+        <app-button [icon]="'upload'" [title]="'Upload'" [size]="'12px'" [class]="'primary'" [isReversed]="true"></app-button>
+      </div>
+    </div>
+    <div class="container">
+      <app-drag-and-drop></app-drag-and-drop>
+    </div>
+    <div class="slides__statistic">
+      <h4>Word Count: 0</h4>
+      <h4>Grade Level: 0</h4>
+      <h4>Sentence Count: 0</h4>
+    </div>
+  </div>
+
+</div>

@@ -23,11 +23,14 @@ import { SearchComponent } from './components/ui-kit/search/search.component';
 import { ContentManagementComponent } from './modules/sites/domains/domain-management/content/content-management/content-management.component';
 import { ContentCardComponent } from './components/content/content-card/content-card.component';
 import { PaginationComponent } from './components/ui-kit/pagination/pagination.component';
-import { ContentDashboardComponent } from './modules/sites/domains/domain-management/content/content-dashboard/content-dashboard.component';
 import { StepperComponent } from './components/stepper/stepper.component';
 import {ContentComponent} from "./modules/sites/domains/domain-management/content/content.component";
 import { TextareaComponent } from './components/ui-kit/textarea/textarea.component';
 import { CheckboxComponent } from './components/ui-kit/checkbox/checkbox.component';
+import { TypeComponent } from './modules/sites/domains/domain-management/content/content-management/type/type.component';
+import { DetailsComponent } from './modules/sites/domains/domain-management/content/content-management/details/details.component';
+import { SlidesComponent } from './modules/sites/domains/domain-management/content/content-management/slides/slides.component';
+import { DragAndDropComponent } from './components/ui-kit/drag-and-drop/drag-and-drop.component';
 
 const appRoutes: Routes = [
   {
@@ -68,11 +71,10 @@ const appRoutes: Routes = [
   },
   {
     path: 'content/:id',
-    component: ContentComponent,
     children: [
       {
         path: '',
-        component: ContentDashboardComponent,
+        component: ContentComponent,
       },
       {
         path: 'create',
@@ -103,11 +105,14 @@ const appRoutes: Routes = [
     ContentManagementComponent,
     ContentCardComponent,
     PaginationComponent,
-    ContentDashboardComponent,
     StepperComponent,
     ContentComponent,
     TextareaComponent,
     CheckboxComponent,
+    TypeComponent,
+    DetailsComponent,
+    SlidesComponent,
+    DragAndDropComponent,
   ],
   imports: [
     BrowserModule,

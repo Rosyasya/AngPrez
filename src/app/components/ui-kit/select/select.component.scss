@@ -12,7 +12,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 14px 10px;
-    width: 500px;
     height: 48px;
     cursor: pointer;
     outline: none;
@@ -45,6 +44,10 @@
   top: 72px;
   left: 0;
   z-index: 999;
+
+  &__no-result {
+    padding: 14px 11px;
+  }
 
   &__list {
     border-radius: 8px 8px 0px 0px;
