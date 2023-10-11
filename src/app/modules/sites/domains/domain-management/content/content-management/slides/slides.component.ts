@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Content} from "../content";
 
 @Component({
   selector: 'app-slides',
@@ -6,4 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./slides.component.scss']
 })
 export class SlidesComponent {
+  @Input() content: Content;
 }

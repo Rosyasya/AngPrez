@@ -1,9 +1,9 @@
 <div class="stepper">
-  <div class="stepper__container" *ngFor="let step of stepper; let i = index" [class.active]="isActive(step)" [class.done]="isCompleted(i)">
-    <div class="circle" [class.active]="isActive(step)" [class.done]="isCompleted(i)">
+  <div class="stepper__container" *ngFor="let step of stepper.steps; let i = index" [class.active]="stepper.isActive(step)" [class.done]="stepper.isCompleted(i)">
+    <div class="circle" [class.active]="stepper.isActive(step)" [class.done]="stepper.isCompleted(i)">
       <i class="icon-check"></i>
     </div>
     <p>{{step}}</p>
-    <div class="line" *ngIf="isLastStep(i)"></div>
+    <div class="line" *ngIf="stepper.isLastStep(i)"></div>
   </div>
 </div>

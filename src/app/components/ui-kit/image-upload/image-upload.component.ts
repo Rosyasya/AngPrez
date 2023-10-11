@@ -12,7 +12,7 @@ export class ImageUploadComponent {
   @Input() height: string;
   @Input() isDisabled: boolean = false;
   @Input() name: string = '';
-  @Output() imageChange = new EventEmitter<string>();
+  @Output() imageChange = new EventEmitter<any>();
   img: any = '';
 
   uploadImage(event: any) {
@@ -24,7 +24,8 @@ export class ImageUploadComponent {
     const reader = new FileReader();
     reader.readAsDataURL(files[0]);
     reader.onloadend = () => {
-      this.img = reader.result
+      this.img = reader.result;
+      this.imageChange.emit(this.img);
     }
   }
 }

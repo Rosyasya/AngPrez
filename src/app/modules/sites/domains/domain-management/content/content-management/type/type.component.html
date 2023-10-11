@@ -1,21 +1,15 @@
 <div class="type">
-  <app-input [(value)]="title" [width]="'800px'" [placeholder]="'e. g. Top best movies of all time'" [label]="'Name'" [isRequired]="true"></app-input>
+  <app-input [(value)]="content.typeTitle" [width]="'800px'" [placeholder]="'e. g. Top best movies of all time'" [label]="'Name'" [isRequired]="true"></app-input>
 
   <div class="type__container">
     <h3>Choose type of management</h3>
 
     <div class="type__card-container">
-      <div class="type__card" (click)="cardHandle('Gallery')">
-        <img src="assets/images/gallery.svg" alt="Gallery">
-        <h2>Gallery</h2>
-      </div>
-      <div class="type__card" (click)="cardHandle('Article')">
-        <img src="assets/images/article.svg" alt="Article">
-        <h2>Article</h2>
-      </div>
-      <div class="type__card" (click)="cardHandle('Quiz')">
-        <img src="assets/images/quiz.svg" alt="Quiz">
-        <h2>Quiz</h2>
+      <div class="type__card" *ngFor="let type of contentType"
+                              (click)="cardHandle(type)"
+                              [class.active]="this.content.type === type">
+        <img [src]="'assets/images/' + type.toLowerCase() + '.svg'" [alt]="type">
+        <h2>{{type}}</h2>
       </div>
     </div>
   </div>

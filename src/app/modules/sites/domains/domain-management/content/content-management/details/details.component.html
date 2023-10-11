@@ -1,12 +1,12 @@
 <div class="wrapper">
   <div class="details">
-    <app-input [(value)]="details.link" [width]="'500px'" [placeholder]="'https://test.fastpress.prezna.com'" [icon]="'link'"></app-input>
-    <app-image-upload [width]="'500px'" [height]="'96px'" [label]="'Featured image'"></app-image-upload>
-    <app-select [options]="[{name: 'test category 1'}, {name: 'test category 2'}]" [(value)]="details.category" [placeholder]="'Select'" [label]="'Category'"></app-select>
-    <app-select [options]="[{name: 'test author 1'}, {name: 'test author 2'}]" [(value)]="details.author" [placeholder]="'Select'" [label]="'Author'"></app-select>
-    <app-select [placeholder]="'Select'" [label]="'Tag'"></app-select>
-    <app-checkbox [(checked)]="details.landing" [title]="'Show on landing'"></app-checkbox>
-    <app-checkbox [(checked)]="details.trending" [title]="'Trending'"></app-checkbox>
-    <app-textarea [(value)]="details.description" [label]="'Content description'" [width]="'500px'" [limit]="250"></app-textarea>
+    <app-input [(value)]="content.link" [width]="'500px'" [placeholder]="'https://test.fastpress.prezna.com'" [icon]="'link'"></app-input>
+    <app-image-upload (imageChange)="handleImage($event)" [width]="'500px'" [height]="'96px'" [label]="'Featured image'"></app-image-upload>
+    <app-select [options]="[{name: 'test category 1'}, {name: 'test category 2'}]" [(value)]="content.category" [placeholder]="'Select'" [label]="'Category'"></app-select>
+    <app-select [options]="[{name: 'test author 1'}, {name: 'test author 2'}]" [(value)]="content.author" [placeholder]="'Select'" [label]="'Author'"></app-select>
+    <app-multiselect [values]="content.tag" [width]="'500px'" [options]="tags" [placeholder]="'Select'" [label]="'Tag'"></app-multiselect>
+    <app-checkbox [(checked)]="content.landing" [title]="'Show on landing'"></app-checkbox>
+    <app-checkbox [(checked)]="content.trending" [title]="'Trending'"></app-checkbox>
+    <app-textarea [(value)]="content.description" [label]="'Content description'" [width]="'500px'" [limit]="250"></app-textarea>
   </div>
 </div>

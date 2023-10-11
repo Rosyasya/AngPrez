@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {StepperService} from "../../application/api/stepper.service";
 
 @Component({
   selector: 'app-stepper',
@@ -6,16 +7,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   styleUrls: ['./stepper.component.scss']
 })
 export class StepperComponent{
-  @Input() stepper: Array<string> = [];
+  @Input() stepper: StepperService;
   @Output() stepChange = new EventEmitter<string>();
   @Input() activeStep: string;
-  isActive(step: any) {
-    return step === this.activeStep;
-  }
-  isCompleted(index: number) {
-    return index < this.stepper.indexOf(this.activeStep);
-  }
-  isLastStep(index: number) {
-    return (this.stepper.length - 1) !== index;
-  }
 }

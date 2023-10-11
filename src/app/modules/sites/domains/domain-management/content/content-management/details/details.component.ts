@@ -1,4 +1,5 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Content} from "../content";
 
 @Component({
   selector: 'app-details',
@@ -6,14 +7,9 @@ import {Component, EventEmitter, Output} from '@angular/core';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent {
-  details = {
-    link: '',
-    category: '',
-    author: '',
-    tag: [],
-    landing: false,
-    trending: false,
-    description: '',
+  @Input() content: Content;
+  tags: Array<object> = [{name: 'Item 1'}, {name: 'Item 2'}, {name: 'Item 3'}, {name: 'Item 4'}, {name: 'Item 5'}, {name: 'Item 6'}, {name: 'Item 7'}];
+  handleImage(event: any) {
+    this.content.detailsImg = event;
   }
-  @Output() detailsHandle = new EventEmitter<object>();
 }

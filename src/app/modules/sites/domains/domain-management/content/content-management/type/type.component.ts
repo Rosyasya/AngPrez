@@ -1,4 +1,5 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Content} from "../content";
 
 @Component({
   selector: 'app-type',
@@ -6,10 +7,9 @@ import {Component, EventEmitter, Output} from '@angular/core';
   styleUrls: ['./type.component.scss']
 })
 export class TypeComponent {
-  title: string = '';
-  type: string = '';
-  @Output() typeHandle = new EventEmitter<{type: string, typeTitle: string }>();
+  @Input() content: Content;
+  contentType = ['Gallery', 'Article', 'Quiz'];
   cardHandle(type: string) {
-    this.typeHandle.emit({type: type, typeTitle: this.title});
+    this.content.type = type;
   }
 }

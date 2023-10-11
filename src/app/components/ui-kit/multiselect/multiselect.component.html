@@ -1,0 +1,29 @@
+<div class="multiselect" [ngStyle]="{'width': width}">
+  <p class="multiselect__label">{{label}}</p>
+
+  <div class="multiselect__container" (click)="open = !open" [ngStyle]="{'width': width}">
+    <div class="multiselect__values">
+      <div class="multiselect__values-item" *ngFor="let value of values">
+        {{value}}
+        <app-button (callback)="removeOption(value)" [icon]="'cross'" [iconSize]="'9px'" [class]="'secondary'"></app-button>
+      </div>
+    </div>
+    <p class="multiselect__container-placeholder">{{placeholder}}</p>
+    <i class="icon-arrow-up" *ngIf="open"></i>
+    <i class="icon-arrow-down" *ngIf="!open"></i>
+  </div>
+
+  <div class="options" *ngIf="open">
+    <ul class="options__list">
+      <li class="options__no-result" *ngIf="!options.length">
+        No result found
+      </li>
+      <li class="options__list-item"
+          *ngFor="let option of options"
+          (click)="selectOption(option)"
+      >
+        {{option.name}}
+      </li>
+    </ul>
+  </div>
+</div>

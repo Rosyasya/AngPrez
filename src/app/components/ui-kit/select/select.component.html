@@ -1,5 +1,5 @@
 <div class="select" [ngStyle]="{'width': width}">
-  <p class="select__label">{{label}}</p>
+  <p class="select__label" *ngIf="label">{{label}}</p>
 
   <div class="select__container" (click)="open = !open">
     <div class="select__container-value">{{value}}</div>

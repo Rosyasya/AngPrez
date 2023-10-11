@@ -1,4 +1,6 @@
 <div class="wrapper">
+  <input type="file" (change)="uploadImage($event)" multiple>
+
   <div class="container">
 
     <div class="container__upload" *ngIf="!slides.length">
@@ -11,15 +13,19 @@
 
     <div class="slides" *ngIf="slides.length">
       <div class="slides__item" *ngFor="let slide of slides; let i = index"
-           [class.favorite]="isFavorite()"
+           [class.favorite]="favoriteSlide === slide"
+           [class.active]="activeSlide === slide"
            [id]="i"
            draggable="true"
            (dragstart)="onDragStart($event, slide)"
            (dragover)="onDragOver($event)"
-           (drop)="onDrop($event, slide)">
+           (drop)="onDrop($event)"
+           (click)="setActive(slide)">
         <p>{{i + 1}}</p>
         <i class="icon-favorite"></i>
-        {{slide}}
+        <div class="slides__image">
+          <img [src]="slide" alt="slide">
+        </div>
       </div>
     </div>
 

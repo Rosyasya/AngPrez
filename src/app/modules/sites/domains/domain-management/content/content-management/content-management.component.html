@@ -3,22 +3,22 @@
   <div class="management__header">
     <div class="management__header-container">
       <h2>Create content</h2>
-      <app-stepper [activeStep]="activeStep" (stepChange)="getActiveStep($event)" [stepper]="stepper"></app-stepper>
+      <app-stepper [activeStep]="stepper.activeStep" (stepChange)="stepper.getActiveStep($event)" [stepper]="stepper"></app-stepper>
     </div>
 
     <div class="management__header-buttons">
-            <app-button (callback)="back()" *ngIf="showBackButton()" [icon]="'arrow-left'" [title]="'Back'" [class]="'secondary'" [isReversed]="true"></app-button>
-            <app-button *ngIf="showOptionButton()" [title]="'Rewrite'" [isReversed]="true"></app-button>
-            <app-button *ngIf="showOptionButton()" [title]="'Save'" [isReversed]="true"></app-button>
-            <app-button (callback)="next()" *ngIf="showNextButton()" [title]="'Next step'"></app-button>
+            <app-button (callback)="stepper.back()" *ngIf="stepper.showBackButton()" [icon]="'arrow-left'" [title]="'Back'" [class]="'secondary'" [isReversed]="true"></app-button>
+            <app-button *ngIf="stepper.showOptionButton()" [title]="'Rewrite'" [isReversed]="true"></app-button>
+            <app-button (callback)="getAllContent()" *ngIf="stepper.showOptionButton()" [title]="'Save'" [isReversed]="true"></app-button>
+            <app-button (callback)="stepper.next()" *ngIf="stepper.showNextButton()" [title]="'Next step'"></app-button>
       <app-button [link]="'/content/' + id" [icon]="'cross'" [class]="'primary'"></app-button>
     </div>
   </div>
 
   <div class="management__container">
-<!--    <app-type (typeHandle)="typeHandle($event)" *ngIf="activeStep === 'Type'"></app-type>-->
-    <app-details (detailsHandle)="detailsHandle($event)" *ngIf="activeStep === 'Details'"></app-details>
-<!--    <app-slides *ngIf="activeStep === 'Content'"></app-slides>-->
+    <app-type [content]="content" *ngIf="stepper.activeStep === 'Type'"></app-type>
+    <app-details [content]="content" *ngIf="stepper.activeStep === 'Details'"></app-details>
+    <app-slides [content]="content" *ngIf="stepper.activeStep === 'Content'"></app-slides>
   </div>
 
 </div>

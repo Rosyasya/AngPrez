@@ -1,27 +1,26 @@
 <div class="wrapper">
 
   <div class="options">
-    <app-input [label]="'Slide title'" [placeholder]="'e. g. Your amazing title'"></app-input>
+    <app-input [(value)]="content.contentTitle" [label]="'Slide title'" [placeholder]="'e. g. Your amazing title'"></app-input>
     <div class="options__container">
       <div class="container">
         <div class="options__container-img">
-          <app-image-upload [height]="'200px'" [label]="'Media'"></app-image-upload>
-          <app-input [placeholder]="'e. g. Unsplash'" [label]="'Image caption'"></app-input>
+          <app-image-upload (imageChange)="content.media" [height]="'200px'" [label]="'Media'"></app-image-upload>
+          <app-input [(value)]="content.mediaCaption" [placeholder]="'e. g. Unsplash'" [label]="'Image caption'"></app-input>
         </div>
       </div>
       <div class="container">
-        <app-textarea [height]="'100%'" [label]="'Content above'"></app-textarea>
+        <app-textarea [(value)]="content.contentAbove" [height]="'100%'" [label]="'Content above'"></app-textarea>
       </div>
       <div class="container">
-        <app-textarea [height]="'100%'" [label]="'Content below'"></app-textarea>
+        <app-textarea [(value)]="content.contentBelow" [height]="'100%'" [label]="'Content below'"></app-textarea>
       </div>
     </div>
   </div>
 
   <div class="slides">
     <div class="slides__status">
-      <h3>Status</h3>
-      <app-select [value]="'Draft'"></app-select>
+      <app-select [label]="'Status'" [options]="[{name: 'Test Status 1'}, {name: 'Test Status 2'}]" [(value)]="content.status" [placeholder]="'Draft'"></app-select>
     </div>
     <div class="slides__options">
       <h3>Slides</h3>
@@ -33,7 +32,7 @@
       </div>
     </div>
     <div class="container">
-      <app-drag-and-drop></app-drag-and-drop>
+      <app-drag-and-drop [slides]="content.slides"></app-drag-and-drop>
     </div>
     <div class="slides__statistic">
       <h4>Word Count: 0</h4>

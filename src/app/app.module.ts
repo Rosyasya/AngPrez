@@ -31,6 +31,7 @@ import { TypeComponent } from './modules/sites/domains/domain-management/content
 import { DetailsComponent } from './modules/sites/domains/domain-management/content/content-management/details/details.component';
 import { SlidesComponent } from './modules/sites/domains/domain-management/content/content-management/slides/slides.component';
 import { DragAndDropComponent } from './components/ui-kit/drag-and-drop/drag-and-drop.component';
+import { MultiselectComponent } from './components/ui-kit/multiselect/multiselect.component';
 
 const appRoutes: Routes = [
   {
@@ -113,6 +114,7 @@ const appRoutes: Routes = [
     DetailsComponent,
     SlidesComponent,
     DragAndDropComponent,
+    MultiselectComponent,
   ],
   imports: [
     BrowserModule,
